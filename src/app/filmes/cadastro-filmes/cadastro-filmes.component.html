@@ -5,13 +5,13 @@
       <mat-card-content>
           <mat-form-field class="full-width">
             <input matInput placeholder="Título *" name="titulo" formControlName="titulo">
-            <mat-error *ngIf="(cadastro.touched || cadastro.dirty) && f.titulo.errors && f.titulo.errors.required">Campo obrigatório</mat-error>
-            <mat-error *ngIf="(cadastro.touched || cadastro.dirty) && f.titulo.errors && f.titulo.errors.minlength">Campo minimo 2 caracteres</mat-error>
-            <mat-error *ngIf="(cadastro.touched || cadastro.dirty) && f.titulo.errors && f.titulo.errors.manlength">Campo maximo 25 caracteres</mat-error>
+            <mat-error *ngIf="validacao.hasErrorValidar(f.titulo, 'required')">Campo obrigatório</mat-error>
+            <mat-error *ngIf="validacao.hasErrorValidar(f.titulo, 'minlength')">Campo minimo 2 caracteres</mat-error>
+            <mat-error *ngIf="validacao.hasErrorValidar(f.titulo, 'maxlength')">Campo maximo 25 caracteres</mat-error>
           </mat-form-field>
           <mat-form-field class="full-width">
             <input matInput placeholder="Link Foto" name="urlFoto" formControlName="urlFoto">
-            <mat-error *ngIf="(cadastro.touched || cadastro.dirty) && f.urlFoto.errors && f.urlFoto.errors.minlength">Campo minimo 10 caracteres</mat-error>
+            <mat-error *ngIf="validacao.hasErrorValidar(f.titulo, 'minlength')">Campo minimo 10 caracteres</mat-error>
 
           </mat-form-field>
           <mat-form-field class="full-width">
@@ -22,7 +22,7 @@
                      name="dtLancamento" 
                      formControlName="dtLancamento"
                      (click)="picker.open()">
-              <mat-error *ngIf="(cadastro.touched || cadastro.dirty) && f.dtLancamento.errors && f.dtLancamento.errors.required">Campo obrigatório</mat-error>
+              <mat-error *ngIf="validacao.hasErrorValidar(f.titulo, 'required')">Campo obrigatório</mat-error>
 
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
@@ -42,14 +42,14 @@
                    placeholder="Nota IMDb *" 
                    name="nota" 
                    formControlName="nota">
-            <mat-error *ngIf="(cadastro.touched || cadastro.dirty) && f.nota.errors && f.nota.errors.required">Campo obrigatório</mat-error>
-            <mat-error *ngIf="(cadastro.touched || cadastro.dirty) && f.nota.errors && f.nota.errors.min">Valor minimo 0</mat-error>
-            <mat-error *ngIf="(cadastro.touched || cadastro.dirty) && f.nota.errors && f.nota.errors.max">Valor maximo 10</mat-error>
+            <mat-error *ngIf="validacao.hasErrorValidar(f.titulo, 'required')">Campo obrigatório</mat-error>
+            <mat-error *ngIf="validacao.hasErrorValidar(f.titulo, 'min')">Valor minimo 0</mat-error>
+            <mat-error *ngIf="validacao.hasErrorValidar(f.titulo, 'max')">Valor maximo 10</mat-error>
                         
           </mat-form-field>
           <mat-form-field class="full-width">
             <input matInput placeholder="Link IMDb" name="urlImdb" formControlName="urlImdb">
-            <mat-error *ngIf="(cadastro.touched || cadastro.dirty) && f.urlImdb.errors && f.urlImdb.errors.minlength">Campo minimo 10 caracteres</mat-error>
+            <mat-error *ngIf="validacao.hasErrorValidar(f.titulo, 'minlength')">Campo minimo 10 caracteres</mat-error>
 
           </mat-form-field>
           <mat-form-field class="full-width">
@@ -60,7 +60,7 @@
               <mat-option value="Romance">Romance</mat-option>
               <mat-option value="Terror">Terror</mat-option>
             </mat-select>
-            <mat-error *ngIf="(cadastro.touched || cadastro.dirty) && f.genero.errors && f.genero.errors.required">Campo obrigatório</mat-error>
+            <mat-error *ngIf="validacao.hasErrorValidar(f.titulo, 'required')">Campo obrigatório</mat-error>
 
           </mat-form-field>
         </mat-card-content>
