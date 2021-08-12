@@ -12,6 +12,7 @@ import { MaterialModule } from './shared/material/material.module';
 import { TopoComponent } from './shared/components/topo/topo.component';
 import { RodapeComponent } from './shared/components/rodape/rodape.component';
 import { FilmesModule } from './filmes/filmes.module';
+import { AlertaComponent } from './shared/components/alerta/alerta.component';
 
 
 
@@ -20,6 +21,7 @@ import { FilmesModule } from './filmes/filmes.module';
     AppComponent,
     TopoComponent,
     RodapeComponent,
+    AlertaComponent,
   ],
   imports: [
     BrowserModule,
