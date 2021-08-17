@@ -3,7 +3,7 @@
   <p>{{descricao}}</p>
 </div>
 <div mat-dialog-actions>
-  <button mat-button cdkFocusInitial [mat-dialog-close]="true">{{btnSucesso}}</button>
-  <button mat-button [mat-dialog-close]="false" >{{btnCancelar}}</button>
+  <button mat-raised-button [color]="corBtn" cdkFocusInitial [mat-dialog-close]="true">{{btnSucesso}}</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="false" *ngIf="possuirBtnFechar"  >{{btnCancelar}}</button>
 </div>
 

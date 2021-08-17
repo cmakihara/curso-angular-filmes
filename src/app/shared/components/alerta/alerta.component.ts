@@ -12,6 +12,9 @@ export class AlertaComponent implements OnInit {
   descricao = 'Registro cadastrado';
   btnSucesso = 'OK';
   btnCancelar = 'Cancelar';
+
+  corBtn = 'primary';
+  possuirBtnFechar = false;
   
 
   constructor(
@@ -19,6 +22,16 @@ export class AlertaComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit() {
+    if(this.data) {
+      this.titulo = this.data.titulo || this.titulo;
+      this.descricao = this.data.descricao || this.descricao;
+      this.btnSucesso = this.data.btnSucesso || this.btnSucesso;
+      this.btnCancelar = this.data.btnCancelar || this.btnCancelar;
+      this.corBtn = this.data.corBtn || this.corBtn;
+      this.possuirBtnFechar = this.data.possuirBtnFechar || this.possuirBtnFechar;
+
+    }
+
   }
 
 }

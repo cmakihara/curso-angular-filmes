@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { MatDialog } from '@angular/material';
 import { FilmesService } from 'src/app/core/filmes.service';
+import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
 import { Filme } from 'src/app/shared/models/filme';
 
@@ -17,7 +19,8 @@ export class CadastroFilmesComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               public validacao: ValidarCamposService,
-              private filmesService: FilmesService
+              private filmesService: FilmesService,
+              public dialog: MatDialog
               ) { }
 
   get f() {
@@ -57,8 +60,9 @@ export class CadastroFilmesComponent implements OnInit {
   }
 
   private salvar(filme: Filme): void {
+    
     this.filmesService.salvar(filme).subscribe(() => {
-      alert('Sucesso');
+      const dialogRef = this.dialog.open(AlertaComponent)
     },
     () => {
       alert('Erro');
