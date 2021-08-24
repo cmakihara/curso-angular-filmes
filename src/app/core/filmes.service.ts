@@ -29,5 +29,8 @@ export class FilmesService {
   }
 
 
+  visualizar(id: number): Observable<Filme> {
+    return this.http.get<Filme>(url + id);
+  }
 
 }

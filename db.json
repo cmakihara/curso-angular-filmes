@@ -109,26 +109,8 @@
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Aventura",
       "id": 11
-    },
-    {
-      "titulo": "dwadawdawdaw",
-      "urlFoto": "",
-      "dtLancamento": "2021-08-11T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0.4,
-      "urlImdb": "",
-      "genero": "Comedia",
-      "id": 12
-    },
-    {
-      "titulo": "wadaasddwdawd",
-      "urlFoto": "",
-      "dtLancamento": "2021-08-19T03:00:00.000Z",
-      "descricao": "dwad\nawdawd\ndawd\ndawd\n",
-      "nota": 0.1,
-      "urlImdb": "",
-      "genero": "Comedia",
-      "id": 13
     }
+ 
+  
   ]
 }
