@@ -12,41 +12,44 @@ import { Filme } from 'src/app/shared/models/filme';
   styleUrls: ['./visualizar-filme.component.scss']
 })
 export class VisualizarFilmeComponent implements OnInit {
-  readonly semFoto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbT89BuQ6AX9VuzxmHqJ5RHgKNwvE2VrO6Vw&usqp=CAU";
-
+  readonly semFoto = 'https://www.termoparts.com.br/wp-content/uploads/2017/10/no-image.jpg';
   filme: Filme;
   id: number;
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private filmesService: FilmesService,
-              public dialog: MatDialog,
-              private router: Router         
-    ) { }
+  constructor(public dialog: MatDialog,
+              private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private filmesService: FilmesService) { }
 
   ngOnInit() {
-    this.id = this.activatedRoute.snapshot.params['id']
+    this.id = this.activatedRoute.snapshot.params['id'];
     this.visualizar();
+  }
+
+  editar(): void {
+    this.router.navigateByUrl('/filmes/cadastro/' + this.id);
   }
 
   excluir(): void {
     const config = {
       data: {
-        titulo: 'Certeza',
-        corBtnCancelar:'primary',
-        corBtnSucesso:'warn',
-        descricao:'Certeza??',
+        titulo: 'Você tem certeza que deseja excluir?',
+        descricao: 'Caso você tenha certceza que deseja excluir, clique no botão OK',
+        corBtnCancelar: 'primary',
+        corBtnSucesso: 'warn',
         possuirBtnFechar: true
-      }as Alerta
+      } as Alerta
     };
     const dialogRef = this.dialog.open(AlertaComponent, config);
     dialogRef.afterClosed().subscribe((opcao: boolean) => {
-      if(opcao) {
-        this.filmesService.excluir(this.id).subscribe(() => this.router.navigateByUrl('/filmes'));
+      if (opcao) {
+        this.filmesService.excluir(this.id)
+        .subscribe(() => this.router.navigateByUrl('/filmes'));
       }
     });
   }
 
-  private visualizar() : void {
+  private visualizar(): void {
     this.filmesService.visualizar(this.id).subscribe((filme: Filme) => this.filme = filme);
   }
 

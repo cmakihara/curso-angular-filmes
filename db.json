@@ -61,14 +61,14 @@
       "genero": "Aventura"
     },
     {
-      "id": 7,
-      "titulo": "Capitã Marvel",
+      "titulo": "Capitã Mehh",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_UX182_CR0,0,182,268_AL_.jpg",
       "dtLancamento": "2019-03-07T03:00:00.000Z",
       "descricao": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
       "nota": 6.9,
       "urlIMDb": "https://www.imdb.com/title/tt4154664/",
-      "genero": "Ação"
+      "genero": "Ação",
+      "id": 7
     },
     {
       "id": 8,
